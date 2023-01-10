@@ -1,17 +1,5 @@
-while True:
-  try:
-    num_players = int(input("Enter the number of players: "))
-    break
-  except ValueError:
-    print("Invalid input. Please enter a valid number.")
-
-while True:
-  try:
-    buy_in = int(input("Enter the buy-in amount: "))
-    break
-  except ValueError:
-    print("Invalid input. Please enter a valid number.")
-
+from flask import Flask, request, render_template
+app = Flask(__name__, template_folder='templates')
 
 def calculate_payouts(num_players, buy_in):
     prize_pool = num_players * buy_in
@@ -31,11 +19,32 @@ def calculate_payouts(num_players, buy_in):
             payouts[1] += buy_in
             remaining_amount -= buy_in
             i+= 1
-    print(f'Total prize pool: ${prize_pool}')
-    return payouts
+    return prize_pool,payouts
 
-payouts = calculate_payouts(num_players, buy_in)
-print(f"First place: ${payouts[1]}")
-print(f"Second place: ${payouts[2]}")
-print(f"Third place: ${payouts[3]}")
-print(f"Fourth place: ${payouts[4]}")
+def place(num):
+    if num == 1:
+        return '1st Place'
+    elif num == 2:
+        return '2nd Place'
+    elif num == 3:
+        return '3rd Place'
+    else:
+        return f'{num}th Place'
+
+@app.route('/', methods=["GET", "POST"])
+def payouts():
+    error = None
+    if request.method == "POST":
+        try:
+            num_players = request.form["num_players"]
+            buy_in = request.form["buy_in"]
+            prize_pool, payouts = calculate_payouts(int(num_players), int(buy_in))
+        except ValueError:
+            error = "Invalid Input. Please enter a valid number only."
+        if not error:
+            return render_template('payouts.html', prize_pool=prize_pool,payouts=payouts,num_players=num_players,buy_in=buy_in)
+    return render_template('payouts.html', error=error)
+
+
+if __name__ == '__main__':
+   app.run()
