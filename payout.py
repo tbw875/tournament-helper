@@ -1,8 +1,8 @@
 from flask import Flask, request, render_template
 app = Flask(__name__, template_folder='templates')
 
-def calculate_payouts(num_players, buy_in):
-    prize_pool = num_players * buy_in
+def calculate_payouts(num_players, buy_in, pot_splash):
+    prize_pool = num_players * buy_in + pot_splash
     payouts = {
         1: round(prize_pool * 0.5 / 5) * 5,
         2: round(prize_pool * 0.3 / 5) * 5,
@@ -38,13 +38,14 @@ def payouts():
         try:
             num_players = request.form["num_players"]
             buy_in = request.form["buy_in"]
-            prize_pool, payouts = calculate_payouts(int(num_players), int(buy_in))
+            pot_splash = request.form["pot_splash"]
+            prize_pool, payouts = calculate_payouts(int(num_players), int(buy_in), int(pot_splash))
         except ValueError:
             error = "Invalid Input. Please enter a valid number only."
         if not error:
-            return render_template('payouts.html', prize_pool=prize_pool,payouts=payouts,num_players=num_players,buy_in=buy_in)
+            return render_template('payouts.html', prize_pool=prize_pool,payouts=payouts,num_players=num_players,buy_in=buy_in, pot_splash=pot_splash)
     return render_template('payouts.html', error=error)
 
 
 if __name__ == '__main__':
-   app.run()
+   app.run(host='0.0.0.0',port=8080)

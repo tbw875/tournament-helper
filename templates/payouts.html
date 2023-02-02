@@ -8,12 +8,14 @@
     <form method="post">
       Number of players: <input type="text" name="num_players" /><br />
       Buy-in amount: <input type="text" name="buy_in" /><br />
+      Pot Splash: <input type="text" name="pot_splash" /><br />
       <input type="submit" value="Submit" /><br />
     </form>
     {% if payouts %}
     <h3>Total prize pool: ${{ prize_pool }}</h2>
     <h4>Total # players: {{ num_players }}</h4>
     <h4>Buy-in amount: ${{ buy_in }}</h4>
+    <h4>Pot splash: ${{ pot_splash }}</h4>
     <br/>
     <h3>Payouts</h3>
     <div>Divide the payout into 4 prizes, where the 4th place gets their buy-in back,</div>
