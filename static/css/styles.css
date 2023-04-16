@@ -1,0 +1,188 @@
+body {
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    background-color: #ced4da;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.app-title {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+h1 {
+    font-weight: 900;
+    color: #1D3557;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1D3557;
+    padding: 10px;
+    color: white;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.logo img {
+    height: 30px;
+    margin-right: 10px;
+    filter: brightness(100%);
+}
+
+
+.hamburger-menu {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+.hamburger-menu nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1;
+}
+
+.hamburger-menu:hover nav {
+    display: block;
+}
+
+.hamburger-menu nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #457B9D;
+    border-radius: 5px;
+}
+
+.hamburger-menu nav ul li {
+    padding: 8px 16px;
+}
+
+.hamburger-menu nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.hamburger-menu nav ul li:hover {
+    background-color: #5E96B9;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f2f2f2;
+    box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+
+input[type="submit"] {
+    width: 100px;
+    padding: 10px;
+    background-color: #E63946;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #D32C3A;
+}
+
+input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.instructions {
+    max-width: 400px;
+}
+
+.result-section {
+    grid-column: 2 / span 1;
+  }
+
+.payout-table {
+    border-collapse: collapse;
+    width: 60%;
+    margin-top: 0 auto;
+}
+
+.payout-table th {
+    background-color: #ced4da;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.payout-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+
+.error {
+    color: red;
+    font-weight: light;
+}
+
+.footer {
+    background-color: #1D3557;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

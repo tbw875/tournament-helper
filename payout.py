@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__, template_folder='templates', static_folder='static')
 
 def calculate_payouts(num_players, buy_in, pot_splash):
     prize_pool = num_players * buy_in + pot_splash
@@ -46,6 +46,9 @@ def payouts():
             return render_template('payouts.html', prize_pool=prize_pool,payouts=payouts,num_players=num_players,buy_in=buy_in, pot_splash=pot_splash)
     return render_template('payouts.html', error=error)
 
+@app.route('/contact_us', methods=["GET"])
+def contact_us():
+    return render_template('contact_us.html')
 
 if __name__ == '__main__':
    app.run(host='0.0.0.0',port=8080)

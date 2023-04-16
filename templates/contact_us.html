@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Contact Us</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <div class="logo">
+            <a href="{{ url_for('payouts') }}" style="text-decoration: none; color: inherit;">
+              <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+              <span class="app-title">PinCalc</span>
+            </a>
+          </div>          
+          <div class="hamburger-menu">
+            <div>
+              <span style="display: block; width: 25px; height: 3px; background-color: white; margin: 4px 0;"></span>
+              <span style="display: block; width: 25px; height: 3px; background-color: white; margin: 4px 0;"></span>
+              <span style="display: block; width: 25px; height: 3px; background-color: white; margin: 4px 0;"></span>
+            </div>
+            <nav>
+              <ul>
+                <li><a href="{{ url_for('payouts') }}">Calculator</a></li>
+                <li><a href="{{ url_for('contact_us') }}">Contact Us</a></li>
+              </ul>
+            </nav>
+          </div>          
+      </header>
+      <main class="content">
+        <div class="container">
+        <h2>Contact Us</h2>
+        <p>For any questions, suggestions, or feedback, please email us at:</p>
+        <p><a href="mailto:pinballcalc@gmail.com">pinballcalc@gmail.com</a></p>
+    </div>
+      </main>
+      <footer class="footer">
+          <a href="https://next.matchplay.events">Match Play Events</a>
+          <a href="https://github.com/tbw875/tournament-helper">GitHub</a>
+          <a href="https://twitter.com/tbw875">Twitter</a>
+      </footer>
+    </div>
+  </body>
+</html>
