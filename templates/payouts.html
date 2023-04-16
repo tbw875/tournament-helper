@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LRXKGS2NM6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LRXKGS2NM6');
+</script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>Pinball-Calc.com</title>
   </head>
@@ -85,7 +94,7 @@
           <a href="https://twitter.com/tbw875">Twitter</a>
         </div>
         <div class="right">
-          <p style="color: white; display: inline-block; margin-right: 10px;">Made with <img src="{{ url_for('static', filename='images/umbrella.png') }}" alt="Umbrella" height="18" width="18" style="vertical-align: middle; margin-left: 0px;"> in Seattle</p>
+          <a href="https://pay.pinball-calc.com"><p style="color: white; display: inline-block; margin-right: 10px;">Made with <img src="{{ url_for('static', filename='images/umbrella.png') }}" alt="Umbrella" height="18" width="18" style="vertical-align: middle; margin-left: 0px;"> in Seattle</p></a>
         </div>
       </footer>      
     </div>
