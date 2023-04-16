@@ -2,7 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
-    <title>Contact Us</title>
+    <title>Pinball-Calc.com</title>
   </head>
   <body>
     <div id="app">
@@ -10,7 +10,7 @@
         <div class="logo">
             <a href="{{ url_for('payouts') }}" style="text-decoration: none; color: inherit;">
               <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
-              <span class="app-title">PinCalc</span>
+              <span class="app-title">Pinball-Calc.com</span>
             </a>
           </div>          
           <div class="hamburger-menu">
@@ -35,10 +35,15 @@
     </div>
       </main>
       <footer class="footer">
+        <div class="left">
           <a href="https://next.matchplay.events">Match Play Events</a>
           <a href="https://github.com/tbw875/tournament-helper">GitHub</a>
           <a href="https://twitter.com/tbw875">Twitter</a>
-      </footer>
+        </div>
+        <div class="right">
+          <p style="color: white; display: inline-block; margin-right: 10px;">Made with <img src="{{ url_for('static', filename='images/umbrella.png') }}" alt="Umbrella" height="18" width="18" style="vertical-align: middle; margin-left: 0px;"> in Seattle</p>
+        </div>
+      </footer> 
     </div>
   </body>
 </html>

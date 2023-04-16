@@ -170,12 +170,29 @@ input[type="text"] {
 
 .footer {
     background-color: #1D3557;
-    padding: 10px;
     color: white;
-    text-align: center;
-    position: sticky;
-    bottom: 0;
-}
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .footer .left {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .footer .left a {
+    margin-right: 10px;
+  }
+  
+  .footer .right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
 
 .footer a {
     color: white;
