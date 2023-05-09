@@ -1,0 +1,97 @@
+/* responsive.css */
+
+@media (max-width: 768px) {
+    body {
+      font-size: 18px;
+    }
+  
+    .header {
+      flex-direction: column;
+      padding: 15px;
+    }
+  
+    .app-title {
+      font-size: 36px;
+    }
+  
+    .logo {
+      margin-bottom: 15px;
+    }
+  
+    .hamburger-menu {
+      position: static;
+      transform: none;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+  
+    .hamburger-menu nav {
+      position: static;
+    }
+  
+    .hamburger-menu.open nav {
+      display: block;
+    }
+  
+    .container {
+      width: 100%;
+      margin: 0;
+      padding: 15px;
+      box-shadow: none;
+    }
+  
+    .content {
+      padding: 10px;
+    }
+  
+    .main {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+  
+    .instructions {
+      max-width: 100%;
+      text-align: center;
+    }
+  
+    form {
+      gap: 20px;
+      font-size: 1.2em;
+    }
+  
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 15px;
+      font-size: 1.1em;
+    }
+  
+    input[type="submit"] {
+      width: 170px;
+      padding: 20px;
+      font-size: 1.1em;
+    }
+  
+    .payout-table {
+      width: 100%;
+    }
+  
+    .footer {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer .left,
+    .footer .right {
+      margin-bottom: 10px;
+    }
+  
+    .footer .left a,
+    .footer .right a {
+      margin: 0 5px;
+    }
+  }
+  
